@@ -7,6 +7,7 @@ import Container from './Container';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import SortVisual from './SortVisual';
+import Pathfind from './Pathfind';
 
 
 function HomePage() {
@@ -37,12 +38,15 @@ function HomePage() {
                     <span style={{ fontSize: '2.5rem' }}>{text}</span>
                     <Cursor cursorStyle="_" />
                 </div> */}
-                <SortVisual />
+
+
+                {/* <SortVisual /> */}
+                <Pathfind />
 
                 <div style={{ zIndex: 1 }}>
-                    <h1 style={{ color: 'white', marginTop: '3rem' }}> Current Application Developer - Technical Specialist Intern at IBM </h1>
+                    {/* <h1 style={{ color: 'white', marginTop: '3rem' }}> Current Application Developer - Technical Specialist Intern at IBM </h1>
                     <h1 style={{ color: 'white', marginTop: '1rem' }}> Incoming Software Engineer 1 at Raytheon Intelligence & Space </h1>
-                    <h1 style={{ color: 'white', marginTop: '1rem' }}> Summer 2022 </h1>
+                    <h1 style={{ color: 'white', marginTop: '1rem' }}> Summer 2022 </h1> */}
 
                     {/* <div className="glass">
                         <h1 style={{ color: 'white', marginTop: '3rem' }}> Hello there </h1>
