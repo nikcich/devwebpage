@@ -8,6 +8,21 @@ import capstone from '../assets/capstone.png';
 import meetup from '../assets/motomeetup.PNG';
 import monte from '../assets/monte.PNG';
 
+import {SiJavascript} from "react-icons/si";
+import {FaPython} from "react-icons/fa";
+import {DiReact} from "react-icons/di";
+import {FaNodeJs} from "react-icons/fa";
+import {SiFirebase} from "react-icons/si";
+import {SiMariadbfoundation} from "react-icons/si";
+import {SiExpress} from "react-icons/si";
+import {SiFlask} from "react-icons/si";
+import {FaLinode} from "react-icons/fa";
+import {AiOutlineHtml5} from "react-icons/ai";
+import {DiCss3} from "react-icons/di";
+import {SiLua} from "react-icons/si";
+import {BsDiscord} from "react-icons/bs";
+import {CgCPlusPlus} from "react-icons/cg";
+
 function Projects() {
 
     return (
@@ -31,6 +46,18 @@ function Projects() {
                     `}
                     image={binderPic}
                     side="left"
+                    icons={
+                        <React.Fragment>
+                            <SiJavascript size={'40px'} color='#ffffff'/>
+                            <AiOutlineHtml5 size={'40px'} color='#ffffff'/>
+                            <DiCss3 size={'40px'} color='#ffffff'/>
+                            <FaNodeJs size={'40px'} color='#ffffff'/>
+                            <DiReact size={'40px'} color='#ffffff'/>
+                            <SiExpress size={'40px'} color='#ffffff'/>
+                            <SiMariadbfoundation size={'40px'} color='#ffffff'/>
+                            <FaLinode size={'40px'} color='#ffffff'/>
+                        </React.Fragment>
+                    }
                 />
 
                 <ProjectDisplay
@@ -44,6 +71,18 @@ function Projects() {
                     `}
                     image={capstone}
                     side="right"
+                    icons={
+                        <React.Fragment>
+                            <SiJavascript size={'40px'} color='#ffffff'/>
+                            <AiOutlineHtml5 size={'40px'} color='#ffffff'/>
+                            <DiCss3 size={'40px'} color='#ffffff'/>
+                            <FaNodeJs size={'40px'} color='#ffffff'/>
+                            <DiReact size={'40px'} color='#ffffff'/>
+                            <FaPython size={'40px'} color='#ffffff'/>
+                            <SiFlask size={'40px'} color='#ffffff'/>
+                            <SiMariadbfoundation size={'40px'} color='#ffffff'/>
+                        </React.Fragment>
+                    }
                 />
 
                 <ProjectDisplay
@@ -55,6 +94,16 @@ function Projects() {
                     `}
                     image={meetup}
                     side="left"
+                    icons={
+                        <React.Fragment>
+                            <SiJavascript size={'40px'} color='#ffffff'/>
+                            <AiOutlineHtml5 size={'40px'} color='#ffffff'/>
+                            <DiCss3 size={'40px'} color='#ffffff'/>
+                            <FaNodeJs size={'40px'} color='#ffffff'/>
+                            <DiReact size={'40px'} color='#ffffff'/>
+                            <SiFirebase size={'40px'} color='#ffffff'/> 
+                        </React.Fragment>
+                    }
                 />
 
                 <ProjectDisplay
@@ -66,6 +115,18 @@ function Projects() {
                     `}
                     image={bot}
                     side="right"
+                    icons={
+                        <React.Fragment>
+                            <SiJavascript size={'40px'} color='#ffffff'/>
+                            <DiReact size={'40px'} color='#ffffff'/>
+                            <FaNodeJs size={'40px'} color='#ffffff'/>
+                            <SiExpress size={'40px'} color='#ffffff'/>
+                            <SiMariadbfoundation size={'40px'} color='#ffffff'/>
+                            <FaLinode size={'40px'} color='#ffffff'/>
+                            <SiLua size={'40px'} color='#ffffff'/>
+                            <BsDiscord size={'40px'} color='#ffffff'/>
+                        </React.Fragment>
+                    }
                 />
 
                 <ProjectDisplay
@@ -77,6 +138,11 @@ function Projects() {
                     `}
                     image={monte}
                     side="left"
+                    icons={
+                        <React.Fragment>
+                            <CgCPlusPlus size={'40px'} color='#ffffff'/>
+                        </React.Fragment>
+                    }
                 />
 
 

@@ -52,8 +52,8 @@ function SideBar() {
                 }}
             >
                 {barSize === '60' ?
-                    <AiOutlineMenu size={'40px'} color='#ffffff' /> :
-                    <IoMdClose size={'40px'} color='#ffffff' />
+                    <AiOutlineMenu className="ham" size={'40px'} color='#ffffff' /> :
+                    <IoMdClose className="ham" size={'40px'} color='#ffffff' />
                 }
             </div>
 
@@ -70,7 +70,7 @@ function SideBar() {
                 
                 <div className={"sidebarButton" + (location.pathname === '/' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 
                 }}>
-                    <MdHome size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                    <MdHome className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
                     <h1 style={{ marginLeft: '2rem', color: 'white' }}> Home </h1>
                 </div>
             </div>
@@ -87,7 +87,7 @@ function SideBar() {
                 </div>
 
                 <div className={"sidebarButton" + (location.pathname === '/projects' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <FaFileCode size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                    <FaFileCode className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
                     <h1 style={{ marginLeft: '2rem', color: "white" }}> Projects </h1>
                 </div>
             </div>
@@ -104,7 +104,7 @@ function SideBar() {
                 </div>
 
                 <div className={"sidebarButton" + (location.pathname === '/github' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <AiFillGithub size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                    <AiFillGithub className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
                     <h1 style={{ marginLeft: '2rem', color: "white" }}> GitHub </h1>
                 </div>
             </div>
@@ -120,7 +120,7 @@ function SideBar() {
                 </div>
 
                 <div className={"sidebarButton" + (location.pathname === '/linkedin' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <AiFillLinkedin size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                    <AiFillLinkedin className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
                     <h1 style={{ marginLeft: '2rem', color: "white" }}> LinkedIn </h1>
                 </div>
             </div>
@@ -138,7 +138,7 @@ function SideBar() {
                 </div>
 
                 <div className={"sidebarButton" + (location.pathname === '/resume' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <ImProfile size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                    <ImProfile className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
                     <h1 style={{ marginLeft: '2rem', color: "white" }}> Resumé </h1>
                 </div>
             </div>
