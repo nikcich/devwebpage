@@ -13,7 +13,7 @@ import React from 'react';
 function App() {
 
   return (
-    <div className="App" style={{ overflowY: 'auto' }}>
+    <div className="App" style={{ overflow: 'hidden' }}>
       <Router>
         <Routes />
       </Router>

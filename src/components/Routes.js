@@ -20,7 +20,7 @@ function Routes() {
 
 
     return (
-        <div>
+        <div style={{overflow: 'hidden'}}>
             <Switch>
                 <Route path="/projects">
                     <Projects />

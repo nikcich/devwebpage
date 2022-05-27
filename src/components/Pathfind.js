@@ -3,27 +3,57 @@ import React, { useState, useEffect } from 'react';
 function Pathfind(props) {
 
     const [grid, setGrid] = useState(
-        [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 1, 0],
-            [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
-            [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        ]
+        []
     );
+
+    const [startPoint, setStartPoint] = useState([]);
+    const [endPoint, setEndPoint] = useState([]);
+    const [completed, setCompleted] = useState(false);
+
+    const generateGrid = (size) => {
+        let gengrid = [];
+
+        let n1 = Math.floor(Math.random() * size);
+        let n2 = Math.floor(Math.random() * size);
+
+        let e1 = Math.floor(Math.random() * size);
+        let e2 = Math.floor(Math.random() * size);
+
+        while (e1 == n1 && e2 == n2) {
+            e1 = Math.floor(Math.random() * size);
+            e2 = Math.floor(Math.random() * size);
+        }
+
+        for (let i = 0; i < size; i++) {
+            let rw = [];
+            for (let j = 0; j < size; j++) {
+                if ((i == n1 && j == n2) || (i == e1 && j == e2)) {
+                    rw.push(2);
+                } else {
+                    let rn = Math.floor(Math.random() * 100);
+
+                    if (rn <= 5) {
+                        rw.push(1);
+                    } else {
+                        rw.push(0);
+                    }
+                }
+            }
+            gengrid.push(rw);
+        }
+
+        
+
+        setGrid(gengrid);
+        setStartPoint([n1, n2]);
+        setEndPoint([e1, e2]);
+    }
 
     const [finding, setFinding] = useState(false);
 
 
     const generatePath = async (row, col) => {
-        const start = [6, 6];
+        const start = [...startPoint];
 
         let pathSteps = [];
 
@@ -34,9 +64,12 @@ function Pathfind(props) {
 
         ];
 
+        let stK = `${startPoint[0]}x${startPoint[1]}`
         let visMap = {
-            '6x6': true
+
         };
+
+        visMap[stK] = true;
 
         let queue = [];
 
@@ -81,20 +114,20 @@ function Pathfind(props) {
     }
 
     useEffect(() => {
-        if (!finding) {
+        if (!finding && grid.length > 0 && endPoint.length > 0 && startPoint.length > 0) {
             setFinding(true);
             let originalGrid = [...grid];
-            generatePath(0, 0).then(res => {
+
+            generatePath(endPoint[0], endPoint[1]).then(res => {
                 let visitedorder = res[0];
                 let keyTable = res[1];
 
-                console.log(visitedorder);
                 let tmpgrid = [...grid];
 
-                let current = [0, 0];
+                let current = endPoint;
                 let path = [];
 
-                while (current[0] !== 6 || current[1] !== 6) {
+                while (current[0] !== startPoint[0] || current[1] !== startPoint[1]) {
                     path.push(current);
                     current = keyTable[`${current[0]}x${current[1]}`];
                 }
@@ -117,23 +150,37 @@ function Pathfind(props) {
                     setTimeout(() => {
                         tmpgrid[curr[0]][curr[1]] = 4;
                         setGrid(tmpgrid);
+
+                        if (i == path.length - 1) {
+                            setCompleted(true);
+                        }
                     }, 20 * visitedorder.length + 100 * i);
                 }
             });
 
 
+        } else if (grid.length === 0) {
+            generateGrid(20);
+        } else if (completed) {
+            setCompleted(false);
+            setTimeout(() => {
+                setEndPoint([]);
+                setStartPoint([]);
+                setFinding(false);
+                generateGrid(20);
+            }, 2000);
         }
 
     });
 
     return (
         <React.Fragment>
-            <div style={{height: '90vh', width: '90%', display: 'flex', alignItems: 'center', position: 'absolute', top: '5rem', left: '100px', zIndex: 0, flexDirection: 'column' }}>
+            <div style={{ overflow: 'hidden', height: '75%', width: '90%', display: 'flex', alignItems: 'center', position: 'absolute', top: '20%', left: '100px', zIndex: 0, flexDirection: 'column' }}>
                 {grid.map((row, rowIndex) => (
-                    <div key={rowIndex} style={{ display: 'flex', flexDirection: 'row', width: '100vh', height: (100 / grid.length) + 'vh' }}>
+                    <div key={rowIndex} style={{ display: 'flex', flexDirection: 'row', width: '75vh', height: (100 / grid.length) + 'vh' }}>
                         {row.map((item, index) => (
-                            <div key={index} className={"pathCell" + (item === 3 ? ' visitedNode': (item === 4? ' pathNode': ''))} style={{
-                                height: '100%', width: '100%', 
+                            <div key={index} className={"pathCell" + (item === 3 ? ' visitedNode' : (item === 4 ? ' pathNode' : ''))} style={{
+                                height: '100%', width: '100%',
                                 background: (item === 0 ? '#161616' : (item === 1 ? '#08bdba' : (item === 2 ? '#0043ce' : (item === 3 ? '#6929c4' : '#a2191f')))),
                                 borderStyle: 'solid solid solid solid', borderWidth: '1px', borderColor: '#393939'
                             }}></div>

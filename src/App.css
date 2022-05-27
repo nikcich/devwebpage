@@ -96,7 +96,7 @@
       transform: scale(1, 1);
   }
   25% {
-      transform: scale(1.5, 0.9);
+      transform: scale(1.2, 0.9);
   }
 
   50% {
@@ -124,7 +124,7 @@
 }
 
 .visitedNode{
-  animation: effect linear 0.5s;
+  animation: effect linear 0.2s;
 }
 
 .pathNode{

@@ -50,7 +50,7 @@ function SortVisual(props) {
 
     return (
         <React.Fragment>
-            <div style={{ height: '90vh', width: '90%', display: 'flex', gap: '10px', alignItems: 'center', position: 'absolute', top: '5rem', left: '100px', zIndex: 0 }}>
+            <div style={{ height: '90vh', width: '90%', display: 'flex', gap: '10px', alignItems: 'center', position: 'absolute', top: '110vh', left: '100px', zIndex: 0 }}>
                 {data.map((item, index) => (
                     <div key={index} className="sortBar" style={{ width: (100 / 40 + '%'), height: ((item * 100 / 40) + 1 + '%') }}></div>
                 ))}
