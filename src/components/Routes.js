@@ -20,7 +20,7 @@ function Routes() {
 
 
     return (
-        <div style={{overflow: 'hidden'}}>
+        <div style={{minHeight: '100vh', background: '#262626'}}>
             <Switch>
                 <Route path="/projects">
                     <Projects />
