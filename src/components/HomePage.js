@@ -31,7 +31,6 @@ function HomePage() {
 
     return (
         <div style={{overflow: 'hidden'}}>
-            <SideBar />
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', overflow: 'hidden' }}>
                 {/* <div style={{ marginLeft: '100px', color: 'white' }}>

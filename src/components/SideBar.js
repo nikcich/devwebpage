@@ -5,7 +5,7 @@ import { MdHome } from 'react-icons/md';
 import { FaFileCode } from 'react-icons/fa'
 import { ImProfile } from 'react-icons/im';
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 import {
     BrowserRouter,
@@ -14,7 +14,7 @@ import {
     Link,
     useHistory,
     useLocation
-  } from "react-router-dom";
+} from "react-router-dom";
 
 function SideBar() {
 
@@ -58,90 +58,101 @@ function SideBar() {
             </div>
 
 
+            <div className="sideBarContent">
 
-            <div className="buttonContainer" style={{ display: 'grid' }} 
-            
-                onClick={() => {
-                    handlePage('/');
-                }}>
-                <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', gridArea: '1/1' }}>
-                    <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                <div className={"sideBarIndicator " + (location.pathname === '/' ? ' sideBarPos1' : location.pathname === '/projects' ? ' sideBarPos2' : location.pathname === '/github' ? ' sideBarPos3' : location.pathname === '/linkedin' ? ' sideBarPos4' : location.pathname === '/resume' ? ' sideBarPos5' : '')} >
+                    <div className={"sidebarButton " + ' sideBarActive'} style={{
+                        display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1, width: '3px'
+                    }}>
+                    </div>
                 </div>
-                
-                <div className={"sidebarButton" + (location.pathname === '/' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 
-                }}>
-                    <MdHome className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
-                    <h1 style={{ marginLeft: '2rem', color: 'white' }}> Home </h1>
+
+                <div className="buttonContainer" style={{ display: 'grid', height: '50px' }}
+
+                    onClick={() => {
+                        handlePage('/');
+                    }}>
+                    <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', gridArea: '1/1' }}>
+                        <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    </div>
+
+                    <div className={"sidebarButton"} style={{
+                        display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1
+                    }}>
+                        <MdHome className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                        <h1 style={{ marginLeft: '2rem', color: 'white' }}> Home </h1>
+                    </div>
                 </div>
-            </div>
 
 
 
 
 
-            <div className="buttonContainer" style={{ display: 'grid' }}onClick={() => {
+                <div className="buttonContainer" style={{ display: 'grid', height: '50px' }} onClick={() => {
                     handlePage('/projects');
                 }}>
-                <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', gridArea: '1/1' }}>
-                    <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', gridArea: '1/1' }}>
+                        <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    </div>
+
+                    <div className={"sidebarButton"} style={{ display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
+                        <FaFileCode className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                        <h1 style={{ marginLeft: '2rem', color: "white" }}> Projects </h1>
+                    </div>
                 </div>
 
-                <div className={"sidebarButton" + (location.pathname === '/projects' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <FaFileCode className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
-                    <h1 style={{ marginLeft: '2rem', color: "white" }}> Projects </h1>
-                </div>
-            </div>
 
 
 
 
-
-            <div className="buttonContainer" style={{ display: 'grid' }}onClick={() => {
+                <div className="buttonContainer" style={{ display: 'grid', height: '50px' }} onClick={() => {
                     handlePage('/github');
                 }}>
-                <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', gridArea: '1/1' }}>
-                    <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', gridArea: '1/1' }}>
+                        <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    </div>
+
+                    <div className={"sidebarButton"} style={{ display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
+                        <AiFillGithub className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                        <h1 style={{ marginLeft: '2rem', color: "white" }}> GitHub </h1>
+                    </div>
                 </div>
 
-                <div className={"sidebarButton" + (location.pathname === '/github' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <AiFillGithub className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
-                    <h1 style={{ marginLeft: '2rem', color: "white" }}> GitHub </h1>
-                </div>
-            </div>
 
 
 
-
-            <div className="buttonContainer" style={{ display: 'grid' }}onClick={() => {
+                <div className="buttonContainer" style={{ display: 'grid', height: '50px' }} onClick={() => {
                     handlePage('/linkedin');
                 }}>
-                <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', gridArea: '1/1' }}>
-                    <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', gridArea: '1/1' }}>
+                        <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    </div>
+
+                    <div className={"sidebarButton"} style={{ display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
+                        <AiFillLinkedin className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                        <h1 style={{ marginLeft: '2rem', color: "white" }}> LinkedIn </h1>
+                    </div>
                 </div>
 
-                <div className={"sidebarButton" + (location.pathname === '/linkedin' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <AiFillLinkedin className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
-                    <h1 style={{ marginLeft: '2rem', color: "white" }}> LinkedIn </h1>
+
+
+
+                <div className="buttonContainer" style={{ display: 'grid', height: '50px' }}
+                    onClick={() => {
+                        handlePage('/resume');
+                    }}
+                >
+                    <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', gridArea: '1/1' }}>
+                        <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
+                    </div>
+
+                    <div className={"sidebarButton"} style={{ display: 'flex', alignItems: 'center', height: '50px', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
+                        <ImProfile className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
+                        <h1 style={{ marginLeft: '2rem', color: "white" }}> Resumé </h1>
+                    </div>
                 </div>
             </div>
 
-
-
-
-            <div className="buttonContainer" style={{ display: 'grid' }}
-                onClick={() => {
-                    handlePage('/resume');
-                }}
-            >
-                <div className="slideContainer" style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', gridArea: '1/1' }}>
-                    <div className="slide" style={{ height: '100%', width: '100%', position: 'relative', left: '-30rem', background: '#393939' }}></div>
-                </div>
-
-                <div className={"sidebarButton" + (location.pathname === '/resume' ? ' sideBarActive': '')} style={{ display: 'flex', alignItems: 'center', height: '50px', marginTop: '2rem', flexShrink: '0', gridArea: '1/1', zIndex: 1 }}>
-                    <ImProfile className='iconButton' size={'30px'} color="white" style={{ minWidth: '30px', marginLeft: '15px' }} />
-                    <h1 style={{ marginLeft: '2rem', color: "white" }}> Resumé </h1>
-                </div>
-            </div>
 
 
 

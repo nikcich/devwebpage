@@ -33,6 +33,10 @@
   background: #393939;
 }
 
+.buttonContainer{
+  margin-top: 10px;
+}
+
 .buttonContainer:hover{
   cursor: pointer;
 }
@@ -84,11 +88,35 @@
   width: 50vw;
 }
 
-
-
-
 .pathCell{
   transition: transform 0.25s ease-in-out, background 0.25s ease-in-out, width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.sideBarIndicator{
+  display: grid;
+  height: 50px;
+  position: relative;
+  transition: top 0.25s ease-in-out;
+}
+
+.sideBarPos1{
+  top: 60px;
+}
+
+.sideBarPos2{
+  top: 120px;
+}
+
+.sideBarPos3{
+  top: 180px;
+}
+
+.sideBarPos4{
+  top: 240px;
+}
+
+.sideBarPos5{
+  top: 300px;
 }
 
 @keyframes effect {

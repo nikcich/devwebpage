@@ -21,6 +21,7 @@ function Routes() {
 
     return (
         <div style={{minHeight: '100vh', background: '#262626'}}>
+            <SideBar />
             <Switch>
                 <Route path="/projects">
                     <Projects />

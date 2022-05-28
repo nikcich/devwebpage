@@ -16,7 +16,6 @@ function Resume() {
     return (
 
         <React.Fragment>
-            <SideBar />
             <div style={{ marginLeft: '100px', display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '0rem' }}>
 
 

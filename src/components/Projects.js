@@ -29,7 +29,6 @@ function Projects() {
     return (
 
         <React.Fragment>
-            <SideBar />
             <div style={{ marginLeft: '100px', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
 
                 <h1 style={{ color: 'white', marginTop: '1rem' }}> My Projects List </h1>
